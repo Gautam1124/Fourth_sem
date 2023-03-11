@@ -1,1 +1,55 @@
+1. Explain the different behaviors of ls -l /usr and ls -l /root.
+=> ls -l /usr will show the long listing of files present in usr directory while ls -l /root will show the long listing of files in root directory
+
+2. How can you enter multiple commands in a single line?
+=> we can use (;) between two command or can use (&&) to seperate two commands.
+
+3. How can you enter one command in multiple lines (like ls in one line and -l in the second?
+=> we can use backslash(\) break the command into two lines.
+
+4. . Enter the command wc without any arguments. Write a few lines, and then hit control-d
+(with the control button pressed, hit d) at the beginning of a new line. See what happens.
+Explain the output. What does control-d do here?
+=> wc stands for word count, after writing any word or any lines then doing ctrl+d will let u know the (no. of newline character, no. of words , no. of characters(including \n).
+
+5. Repeat the last exercise with cat (without any arguments)?
+=> cat is used to print content of the file (cat <file name>) but here it will reprint what u will write in terminal.
+
+6. What happens if you press control-c instead of control-d?
+=> It will terminate the process.
+
+7. Enter ls -l | wc | wc as a command. Explain the output.
+=> This command is a pipe in which output of first command is passed as input to the other commna ls -l will generate the long listing of file and this group of lines will 
+   be read as input for wc and ls -l | wc will generate a one line sentence in which will have the count of new line words and total char, this one line will be passed to 
+   wc as an argument and it will print ( 1     3     (total char in ls -l | wc) )
+   
+ 8. Go to a directory that contains both regular files and subdirectories. Type the following commands and explain the differences: du, du -a, du -s, du -sk, du -sm,and du -sh. 
+    Explain the outputs.
+ => du stands for disk usage, it shows the disk usage(in blocks) of the files and directory{du: shows disk usage of current directory and sub-directory; du -a: it shows
+    disk usage of all the files whose location starts from ./(means all the files in the directory and sub-directory); du -s: total disk usage of the directory; du -sk:disk usage in kilbytes
+  
+ 9. Explain why the count of links to a directory is always > 2 (look at the number appearing immediately after the permissions, in each line of ls -l).
+ => Because every directory contains atleast two subdirectory (. and ..) that's why link of count for any directory is greater than 2.
+ 
+10. Create a non-empty text file testfile.txt. See the directory listing using ls -l. Then type the command ln -s testfile.txt T. Do ls -l again. Whatis the permission of T? 
+    Try changing the permission of T as chmod 000 T. What happens? Why? Remove T. What happens? Create another symbolic link TT to testfile.txt. Remove testfile.txt. What happens?
+=> ln -s testfile.txt T will create a linker 'T' to the text file, it is same like reference in cpp if the permission of T is changed then permission of .txt will also be changed and
+   if we remove the file and try to acess using linker it will give error as broken link as the file is removed.
+ 
+11. Create a text file abc.txt. See the directory listing. Then enter the command ln abc.txt ABC.txt. Again see the directory listing. What are the differences?
+Explain. Add some extra lines to abc.txt. Again see the directory listing. Explain the changes.Remove the original file abc.txt. Explain what the directory listing shows
+=> ls abc.txt Abc.txt will create a hard link means both file will be linked to the same memory as if u will change the content of file other will be changed sync. and if
+   u remove one file still memory is linked to other file.
+
+
+
+
+
+
+
+
+
+
+
+
 
